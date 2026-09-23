@@ -1244,7 +1244,7 @@ resolve_host_working_dir() {
 read_config_anchor() {
   # Reads <WORKING_DIR>/_lightrag_config/storage_anchor.json, the binding the
   # server checks before it opens the configuration storage (see *The anchor
-  # and the container identity* in docs/design/ConfigurationStorage.md).
+  # and the container identity* in docs/design/ConfigurationStorageContract.md).
   # The wizard only ever READS it -- it never writes, moves or deletes it.
   #
   # Sets CONFIG_ANCHOR_STATE to "absent", "readable" or "unreadable", and
@@ -1399,7 +1399,7 @@ select_config_storage() {
   # selection, following a KV backend that changed, and falling through to the
   # generic prompt when the new KV backend is not admitted -- so the answer is
   # computed ONCE, as ``records_in``, and every branch below reads it rather
-  # than re-deriving it. See docs/design/ConfigurationStorage.md.
+  # than re-deriving it. See docs/design/ConfigurationStorageContract.md.
   #
   # The answer comes back in ``SELECTED_CONFIG_STORAGE`` rather than on stdout
   # so the caller does not need a command substitution: this function also
